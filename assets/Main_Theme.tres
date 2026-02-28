@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://jm3khnh4uhry"]
+
+[ext_resource type="FontFile" uid="uid://8owu6p5vs4w5" path="res://assets/fonts/pixel_operator/PixelOperator8.ttf" id="1_fdray"]
+
+[resource]
+default_font = ExtResource("1_fdray")
+default_font_size = 16
+Button/colors/font_outline_color = Color(0, 0, 0, 0)
+Button/constants/outline_size = 5
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_fdray")

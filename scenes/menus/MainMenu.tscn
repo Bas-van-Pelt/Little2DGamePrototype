@@ -1,3 +1,59 @@
-[gd_scene format=3 uid="uid://cman72aryckor"]
+[gd_scene load_steps=5 format=3 uid="uid://cman72aryckor"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="FontFile" uid="uid://8owu6p5vs4w5" path="res://assets/fonts/pixel_operator/PixelOperator8.ttf" id="1_bqojv"]
+[ext_resource type="FontFile" uid="uid://bh5js6qm2itio" path="res://assets/fonts/pixel_operator/PixelOperator8-Bold.ttf" id="1_wlpbi"]
+[ext_resource type="Theme" uid="uid://jm3khnh4uhry" path="res://assets/Main_Theme.tres" id="3_ldf1p"]
+
+[sub_resource type="Theme" id="Theme_ldf1p"]
+default_font = ExtResource("1_bqojv")
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Title" type="Label" parent="."]
+texture_filter = 1
+texture_repeat = 1
+offset_right = 640.0
+offset_bottom = 100.0
+theme = SubResource("Theme_ldf1p")
+theme_override_fonts/font = ExtResource("1_wlpbi")
+theme_override_font_sizes/font_size = 32
+text = "Little Sample Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+texture_filter = 1
+texture_repeat = 1
+offset_top = 100.0
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("3_ldf1p")
+
+[node name="Buttons" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Play" type="Button" parent="CenterContainer/Buttons"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+theme = ExtResource("3_ldf1p")
+text = "Play"
+
+[node name="Settings" type="Button" parent="CenterContainer/Buttons"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+theme = ExtResource("3_ldf1p")
+text = "Settings"
+
+[node name="Credits" type="Button" parent="CenterContainer/Buttons"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+theme = ExtResource("3_ldf1p")
+text = "Credits"
+
+[node name="Exit" type="Button" parent="CenterContainer/Buttons"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+theme = ExtResource("3_ldf1p")
+text = "Exit"
