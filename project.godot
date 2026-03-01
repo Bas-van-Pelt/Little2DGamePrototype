@@ -13,11 +13,12 @@ config_version=5
 config/name="Gem5tone_Game_P001"
 run/main_scene="uid://cman72aryckor"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
-[autoload]
+[audio]
 
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+buses/default_bus_layout="uid://b5lipqtmpc5rb"
 
 [dialogic]
 
@@ -74,12 +75,9 @@ window/stretch/scale_mode="integer"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
-
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.038397167, 0.038397167, 0.03839716, 1)
