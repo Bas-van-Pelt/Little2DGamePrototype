@@ -18,7 +18,7 @@ func _ready() -> void:
 #	pass
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/core/HomeScene.tscn")
+	get_tree().change_scene_to_file("res://scenes/overworld/HomeScene.tscn")
 
 func _on_settings_pressed() -> void:
 	$CenterContainer/Buttons.visible = false
