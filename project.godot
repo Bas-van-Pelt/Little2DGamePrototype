@@ -10,11 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Gem5tone_Game_P001"
+config/name="Gem5tone_Game"
+config/description="Currenlty still in prototype, you can walk arround the abyss"
+config/version="B-001"
 run/main_scene="uid://cman72aryckor"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-config/icon="res://icon.svg"
+config/icon="uid://ccertspl1yj2"
 
 [audio]
 
