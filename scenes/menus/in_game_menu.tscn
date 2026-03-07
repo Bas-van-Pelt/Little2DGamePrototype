@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwbvpwg2gl7is"]
+
+[ext_resource type="Theme" uid="uid://jm3khnh4uhry" path="res://settings/Main_Theme.tres" id="1_s348h"]
+[ext_resource type="Script" uid="uid://p4gqp687vbya" path="res://scenes/menus/in_game_menu.gd" id="2_j7b2m"]
+
+[node name="In-Game_Menu" type="Control"]
+process_mode = 3
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s348h")
+script = ExtResource("2_j7b2m")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Buttons" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="CenterContainer/Buttons"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+mouse_filter = 1
+text = "Resume"
+
+[node name="Settings" type="Button" parent="CenterContainer/Buttons"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+mouse_filter = 1
+text = "Settings"
+
+[node name="Exit" type="Button" parent="CenterContainer/Buttons"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+mouse_filter = 1
+text = "Exit"
+
+[connection signal="pressed" from="CenterContainer/Buttons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CenterContainer/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/Buttons/Exit" to="." method="_on_exit_pressed"]

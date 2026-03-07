@@ -93,7 +93,7 @@ animations = [{
 "duration": 0.75,
 "texture": SubResource("AtlasTexture_uhn62")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 1.0
 }, {
@@ -116,7 +116,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_uhn62")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle_with_blink",
 "speed": 5.0
 }, {
