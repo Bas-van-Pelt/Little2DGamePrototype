@@ -40,10 +40,10 @@ position = Vector2(321, 186)
 shape = SubResource("RectangleShape2D_ea16l")
 
 [node name="In-Game_Menu" parent="." instance=ExtResource("3_c2bqt")]
-visible = false
 offset_left = -12.0
 offset_top = 7.0
 offset_right = -12.0
 offset_bottom = 7.0
 
+[connection signal="ready" from="." to="PlayerCharacter" method="_on_home_scene_ready"]
 [connection signal="body_exited" from="BorderTrigger" to="BorderTrigger" method="_on_body_exited"]

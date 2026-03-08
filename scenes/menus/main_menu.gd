@@ -12,6 +12,7 @@ func _ready() -> void:
 	#for my dumbah... (i keep forgetting to hide these nodes
 	$CenterContainer/SettingsMenu.visible = false
 	$CenterContainer/CreditsMenu.visible = false
+	get_tree().paused = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # func _process(delta: float) -> void:

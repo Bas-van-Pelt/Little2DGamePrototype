@@ -21,27 +21,64 @@ layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 
-[node name="Buttons" type="VBoxContainer" parent="CenterContainer"]
+[node name="MenuButtons" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="Resume" type="Button" parent="CenterContainer/Buttons"]
+[node name="Resume" type="Button" parent="CenterContainer/MenuButtons"]
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 mouse_filter = 1
 text = "Resume"
 
-[node name="Settings" type="Button" parent="CenterContainer/Buttons"]
+[node name="Settings" type="Button" parent="CenterContainer/MenuButtons"]
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 mouse_filter = 1
 text = "Settings"
 
-[node name="Exit" type="Button" parent="CenterContainer/Buttons"]
+[node name="ExitGame" type="Button" parent="CenterContainer/MenuButtons"]
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 mouse_filter = 1
-text = "Exit"
+text = "Exit Game"
 
-[connection signal="pressed" from="CenterContainer/Buttons/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="CenterContainer/Buttons/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="CenterContainer/Buttons/Exit" to="." method="_on_exit_pressed"]
+[node name="SettingsMenuSelection" type="VBoxContainer" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Back" type="Button" parent="CenterContainer/SettingsMenuSelection"]
+custom_minimum_size = Vector2(250, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+text = "Back"
+
+[node name="AudioSettings" type="Button" parent="CenterContainer/SettingsMenuSelection"]
+custom_minimum_size = Vector2(250, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+text = "Audio Settings"
+
+[node name="VideoSettings" type="Button" parent="CenterContainer/SettingsMenuSelection"]
+custom_minimum_size = Vector2(250, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+text = "Video Settings"
+
+[node name="ControlSettings" type="Button" parent="CenterContainer/SettingsMenuSelection"]
+custom_minimum_size = Vector2(250, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+text = "Control Settings"
+
+[connection signal="pressed" from="CenterContainer/MenuButtons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/MenuButtons/ExitGame" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CenterContainer/SettingsMenuSelection/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CenterContainer/SettingsMenuSelection/AudioSettings" to="." method="_on_audio_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/SettingsMenuSelection/VideoSettings" to="." method="_on_video_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/SettingsMenuSelection/ControlSettings" to="." method="_on_control_settings_pressed"]
