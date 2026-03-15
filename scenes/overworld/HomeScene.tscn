@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://u5dfqkj7jtff"]
+[gd_scene load_steps=12 format=4 uid="uid://u5dfqkj7jtff"]
 
 [ext_resource type="PackedScene" uid="uid://cqabj57fkcnu4" path="res://assets/characters/gem5tone/Gem5tone_Prefab.tscn" id="1_b7d3r"]
+[ext_resource type="Script" uid="uid://csk75fufw70fu" path="res://scenes/overworld/tilemap_colorchange.gd" id="1_ixe8g"]
+[ext_resource type="Material" uid="uid://c67hl8js7qowf" path="res://scenes/overworld/TilemapShader.tres" id="1_rdhp8"]
 [ext_resource type="TileSet" uid="uid://cf46dmsqfiljk" path="res://assets/tilemaps/Tileset.tres" id="1_tg8yi"]
 [ext_resource type="PackedScene" uid="uid://bwbvpwg2gl7is" path="res://scenes/menus/in_game_menu.tscn" id="3_c2bqt"]
 [ext_resource type="Script" uid="uid://cpwja5wnxcr3y" path="res://scenes/overworld/border_trigger.gd" id="3_ea16l"]
 [ext_resource type="Texture2D" uid="uid://b7b7a0df3md4l" path="res://assets/objects/beds/bed.png" id="4_vu466"]
 [ext_resource type="PhysicsMaterial" uid="uid://c0a02craxwi47" path="res://settings/physics_materials/Bed_Material.tres" id="5_g3oxo"]
+[ext_resource type="PackedScene" uid="uid://c3rn5lequxxls" path="res://scenes/gd_tools/camera_controller.tscn" id="9_rdhp8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vu466"]
 size = Vector2(28, 55)
@@ -16,6 +19,8 @@ size = Vector2(1188, 758)
 [node name="HomeScene" type="Node2D"]
 
 [node name="Tilemap" type="Node2D" parent="."]
+material = ExtResource("1_rdhp8")
+script = ExtResource("1_ixe8g")
 
 [node name="TilemapLayer0" type="TileMapLayer" parent="Tilemap"]
 use_parent_material = true
@@ -40,17 +45,16 @@ shape = SubResource("RectangleShape2D_vu466")
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_b7d3r")]
 position = Vector2(392, 157)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCharacter"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(392, 157)
+[node name="CameraController" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("9_rdhp8")]
+position = Vector2(320, 180)
+target_node = NodePath("../PlayerCharacter")
+enable_zoom = false
+enable_smoothing = false
 
 [node name="BorderTrigger" type="Area2D" parent="."]
 script = ExtResource("3_ea16l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderTrigger"]
-visible = false
 position = Vector2(321, 186)
 shape = SubResource("RectangleShape2D_ea16l")
 

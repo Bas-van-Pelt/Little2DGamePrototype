@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Gem5tone_Game"
+config/name="Room 102"
 config/description="Currenlty still in prototype, you can walk arround the abyss"
 config/version="0.0.1"
 run/main_scene="uid://cman72aryckor"

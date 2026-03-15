@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c67hl8js7qowf"]
+
+[ext_resource type="Shader" uid="uid://ceema357fs7ny" path="res://scenes/overworld/TilemapShader.gdshader" id="1_kcpp7"]
+
+[resource]
+shader = ExtResource("1_kcpp7")
+shader_parameter/amount = 0.0
