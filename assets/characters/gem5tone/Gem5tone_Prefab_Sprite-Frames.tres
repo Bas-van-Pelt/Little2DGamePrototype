@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://bt7xxppsgf5yj"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://bt7xxppsgf5yj"]
 
 [ext_resource type="Texture2D" uid="uid://cbt5ebfp8rqbp" path="res://assets/characters/gem5tone/Gem5Tone_Character_Sheet.png" id="1_sdmn2"]
 

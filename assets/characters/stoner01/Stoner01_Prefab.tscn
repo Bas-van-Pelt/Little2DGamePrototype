@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bihlpe2brx71l"]
+
+[ext_resource type="Texture2D" uid="uid://ccqooghsn7n33" path="res://assets/placeholders_during_development/Characters/Apartment_building2/Stoners/Stoner_barrie-batsbak.png" id="1_ox777"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7166i"]
+size = Vector2(54, 54)
+
+[node name="Stoner01Character" type="CharacterBody2D" unique_id=1784822363]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=236625842]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ox777")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1749109594]
+shape = SubResource("RectangleShape2D_7166i")

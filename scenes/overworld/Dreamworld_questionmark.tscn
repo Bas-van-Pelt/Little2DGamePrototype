@@ -1,0 +1,57 @@
+[gd_scene format=4 uid="uid://qranr5rvsnek"]
+
+[ext_resource type="Material" uid="uid://c67hl8js7qowf" path="res://scenes/overworld/TilemapShader.tres" id="1_ixqqk"]
+[ext_resource type="Script" uid="uid://csk75fufw70fu" path="res://scenes/overworld/tilemap_colorchange.gd" id="2_83dl8"]
+[ext_resource type="TileSet" uid="uid://cf46dmsqfiljk" path="res://assets/tilemaps/Tileset.tres" id="3_ev0am"]
+[ext_resource type="Texture2D" uid="uid://b7b7a0df3md4l" path="res://assets/objects/beds/bed.png" id="4_yd18f"]
+[ext_resource type="PhysicsMaterial" uid="uid://c0a02craxwi47" path="res://settings/physics_materials/Bed_Material.tres" id="5_2ps1h"]
+[ext_resource type="PackedScene" uid="uid://c3rn5lequxxls" path="res://scenes/gd_tools/camera_controller.tscn" id="6_oxw4i"]
+[ext_resource type="PackedScene" uid="uid://bwbvpwg2gl7is" path="res://scenes/menus/in_game_menu.tscn" id="7_3mfjk"]
+[ext_resource type="PackedScene" uid="uid://cqabj57fkcnu4" path="res://assets/characters/gem5tone/Gem5tone_Prefab.tscn" id="10_4t55y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vu466"]
+size = Vector2(28, 55)
+
+[node name="HomeScene" type="Node2D" unique_id=989248433]
+
+[node name="Tilemap" type="Node2D" parent="." unique_id=1402928916]
+material = ExtResource("1_ixqqk")
+script = ExtResource("2_83dl8")
+
+[node name="TilemapLayer0" type="TileMapLayer" parent="Tilemap" unique_id=434947101]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAEAAEAAAACAAAAAAADAAMAAAACAAEAAAAEAAMAAAACAAEAAAAFAAMAAAACAAEAAAAGAAMAAAACAAEAAAAGAAIAAAACAAEAAAAFAAIAAAACAAEAAAAEAAIAAAACAAEAAAADAAIAAAACAAEAAAADAAEAAAACAAAAAAAFAAEAAAACAAAAAAAGAAEAAAACAAAAAAACAAMAAAABAAEAAAACAAIAAAABAAEAAAADAAQAAAACAAIAAAAEAAQAAAACAAIAAAAFAAQAAAACAAIAAAAGAAQAAAACAAIAAAAHAAIAAAADAAEAAAAHAAMAAAADAAEAAAA=")
+tile_set = ExtResource("3_ev0am")
+use_kinematic_bodies = true
+
+[node name="Indoors" type="Node2D" parent="." unique_id=99468398]
+
+[node name="Player_Bed" type="Sprite2D" parent="Indoors" unique_id=624238781]
+position = Vector2(223, 159)
+texture = ExtResource("4_yd18f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Indoors/Player_Bed" unique_id=246141731]
+disable_mode = 1
+physics_material_override = ExtResource("5_2ps1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Indoors/Player_Bed/StaticBody2D" unique_id=1046960897]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_vu466")
+
+[node name="CameraController" parent="." unique_id=2107553630 node_paths=PackedStringArray("target_node") instance=ExtResource("6_oxw4i")]
+position = Vector2(320, 180)
+target_node = NodePath("../PlayerCharacter")
+enable_zoom = false
+enable_smoothing = false
+
+[node name="In-Game_Menu" parent="." unique_id=921476411 instance=ExtResource("7_3mfjk")]
+visible = false
+offset_left = -12.0
+offset_top = 7.0
+offset_right = -12.0
+offset_bottom = 7.0
+
+[node name="PlayerCharacter" parent="." unique_id=436521954 instance=ExtResource("10_4t55y")]
+position = Vector2(392, 157)
+
+[connection signal="ready" from="." to="PlayerCharacter" method="_on_home_scene_ready"]

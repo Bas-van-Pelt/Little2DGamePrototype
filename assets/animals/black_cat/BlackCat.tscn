@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cpmm24nqfcyrf"]
+
+[ext_resource type="Texture2D" uid="uid://by55b8wktci56" path="res://assets/placeholders_during_development/World/buildings/apartments/Apartment2/Appartment_Building2_Inside/Black_cat.png" id="1_awqnn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgbln"]
+size = Vector2(33, 49.5)
+
+[node name="BlackCat" type="CharacterBody2D" unique_id=81752565]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=840161634]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_awqnn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1636225791]
+position = Vector2(-1.5, 1.25)
+shape = SubResource("RectangleShape2D_jgbln")

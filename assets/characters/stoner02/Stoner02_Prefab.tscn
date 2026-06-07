@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://n8ushok2psav"]
+
+[ext_resource type="Texture2D" uid="uid://bk8qitdx41d0w" path="res://assets/placeholders_during_development/Characters/Apartment_building2/Stoners/Stoner2_Marlon_from_scary_movie.png" id="1_0xr6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyn3"]
+size = Vector2(54, 54)
+
+[node name="Stoner02Prefab" type="CharacterBody2D" unique_id=53062131]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=550141482]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_0xr6i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=803509239]
+shape = SubResource("RectangleShape2D_xbyn3")

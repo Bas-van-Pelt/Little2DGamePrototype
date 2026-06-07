@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b40v2guknc50u"]
+
+[ext_resource type="PackedScene" uid="uid://cqabj57fkcnu4" path="res://assets/characters/gem5tone/Gem5tone_Prefab.tscn" id="1_i47jn"]
+[ext_resource type="PackedScene" uid="uid://c3rn5lequxxls" path="res://scenes/gd_tools/camera_controller.tscn" id="2_253a0"]
+[ext_resource type="Texture2D" uid="uid://ckcq67okc212x" path="res://assets/placeholders_during_development/World/buildings/apartments/Apartment2/Apartment_building_School_home-Tech_Colleg_Aalborg.png" id="3_253a0"]
+
+[node name="WorldScene" type="Node2D" unique_id=654829978]
+
+[node name="CameraController" parent="." unique_id=334528744 node_paths=PackedStringArray("target_node") instance=ExtResource("2_253a0")]
+position = Vector2(321, 180)
+mode = 1
+target_node = NodePath("../PlayerCharacter")
+enable_smoothing = false
+
+[node name="Apartmentbuilding" type="StaticBody2D" parent="." unique_id=378276628]
+
+[node name="ApartmentBuildingSchoolHomeTechCollegAalborg" type="Sprite2D" parent="Apartmentbuilding" unique_id=399367518]
+position = Vector2(350, -15)
+scale = Vector2(1.7430556, 1.7430556)
+texture = ExtResource("3_253a0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Apartmentbuilding" unique_id=1785251156]
+position = Vector2(350, -15)
+scale = Vector2(1.7430556, 1.7430556)
+polygon = PackedVector2Array(-373.48206, 111.87251, 380.36658, 114.741035, 410.19922, 52.20717, 395.2829, -118.75698, -388.3984, -117.609566, -407.9044, 48.76494)
+
+[node name="PlayerCharacter" parent="." unique_id=322487264 instance=ExtResource("1_i47jn")]
+position = Vector2(312, 231)

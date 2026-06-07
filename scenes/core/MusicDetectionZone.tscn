@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bv2ll53iv3id7"]
+
+[ext_resource type="Script" uid="uid://pk6fe4vi576s" path="res://scenes/core/music_detection_zone.gd" id="1_oayiq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7fmge"]
+
+[node name="MusicDetectionZone" type="Area2D" unique_id=1460515279]
+script = ExtResource("1_oayiq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=386071944]
+shape = SubResource("CircleShape2D_7fmge")
+
+[node name="IntroPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1531337892]
+
+[node name="LoopPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1648446931]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqabj57fkcnu4"]
+[gd_scene format=3 uid="uid://cqabj57fkcnu4"]
 
 [ext_resource type="SpriteFrames" uid="uid://bt7xxppsgf5yj" path="res://assets/characters/gem5tone/Gem5tone_Prefab_Sprite-Frames.tres" id="1_76jwm"]
 [ext_resource type="Script" uid="uid://fi81l5qq4cmr" path="res://assets/characters/gem5tone/playercontroller.gd" id="1_co5e3"]
@@ -6,17 +6,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76jwm"]
 size = Vector2(26, 28)
 
-[node name="PlayerCharacter" type="CharacterBody2D"]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=1537992113 groups=["player_character"]]
 texture_filter = 1
 texture_repeat = 1
 script = ExtResource("1_co5e3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=779881285 groups=["player_character"]]
 sprite_frames = ExtResource("1_76jwm")
 animation = &"all_frames"
 autoplay = "idle"
 
-[node name="BodyCollider" type="CollisionShape2D" parent="."]
+[node name="BodyCollider" type="CollisionShape2D" parent="." unique_id=253221155 groups=["player_character"]]
 position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_76jwm")
 

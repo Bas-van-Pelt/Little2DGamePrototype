@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dv0hu3wnsy7y"]
+
+[ext_resource type="Texture2D" uid="uid://b7b7a0df3md4l" path="res://assets/objects/beds/bed.png" id="4_l16rv"]
+[ext_resource type="PhysicsMaterial" uid="uid://c0a02craxwi47" path="res://settings/physics_materials/Bed_Material.tres" id="5_7al7n"]
+[ext_resource type="PackedScene" uid="uid://cqabj57fkcnu4" path="res://assets/characters/gem5tone/Gem5tone_Prefab.tscn" id="6_og3ss"]
+[ext_resource type="PackedScene" uid="uid://cpmm24nqfcyrf" path="res://assets/animals/black_cat/BlackCat.tscn" id="7_mrge3"]
+[ext_resource type="PackedScene" uid="uid://c3rn5lequxxls" path="res://scenes/gd_tools/camera_controller.tscn" id="7_u7nun"]
+[ext_resource type="PackedScene" uid="uid://bwbvpwg2gl7is" path="res://scenes/menus/in_game_menu.tscn" id="8_r7xgu"]
+[ext_resource type="PackedScene" uid="uid://bihlpe2brx71l" path="res://assets/characters/stoner01/Stoner01_Prefab.tscn" id="9_0ouhv"]
+[ext_resource type="PackedScene" uid="uid://bv2ll53iv3id7" path="res://scenes/core/MusicDetectionZone.tscn" id="10_0j2up"]
+[ext_resource type="PackedScene" uid="uid://n8ushok2psav" path="res://assets/characters/stoner02/Stoner02_Prefab.tscn" id="10_mrge3"]
+[ext_resource type="AudioStream" uid="uid://fv1fetfe5fc7" path="res://assets/placeholders_during_development/audio_tracks/black_cat/black_cat.ogg" id="12_okee8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vu466"]
+size = Vector2(28, 55)
+
+[node name="HomeScene" type="Node2D" unique_id=989248433]
+
+[node name="Indoors" type="Node2D" parent="." unique_id=99468398]
+
+[node name="Player_Bed" type="Sprite2D" parent="Indoors" unique_id=624238781]
+position = Vector2(223, 159)
+texture = ExtResource("4_l16rv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Indoors/Player_Bed" unique_id=246141731]
+disable_mode = 1
+physics_material_override = ExtResource("5_7al7n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Indoors/Player_Bed/StaticBody2D" unique_id=1046960897]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_vu466")
+
+[node name="BlackCat" parent="." unique_id=81752565 instance=ExtResource("7_mrge3")]
+position = Vector2(68, 90)
+
+[node name="Stoner01Character" parent="." unique_id=1784822363 instance=ExtResource("9_0ouhv")]
+position = Vector2(37, 22)
+
+[node name="Stoner02Prefab" parent="." unique_id=53062131 instance=ExtResource("10_mrge3")]
+position = Vector2(96, 22)
+
+[node name="PlayerCharacter" parent="." unique_id=436521954 instance=ExtResource("6_og3ss")]
+position = Vector2(392, 157)
+
+[node name="MusicDetectionZone" parent="." unique_id=1460515279 instance=ExtResource("10_0j2up")]
+position = Vector2(67, 88)
+scale = Vector2(20, 20)
+music_track = ExtResource("12_okee8")
+
+[node name="CameraController" parent="." unique_id=2107553630 node_paths=PackedStringArray("target_node") instance=ExtResource("7_u7nun")]
+position = Vector2(320, 180)
+target_node = NodePath("../PlayerCharacter")
+enable_zoom = false
+enable_smoothing = false
+
+[node name="In-Game_Menu" parent="CameraController" unique_id=921476411 instance=ExtResource("8_r7xgu")]
+visible = false
+offset_left = -332.0
+offset_top = -173.0
+offset_right = -332.0
+offset_bottom = -173.0
+
+[connection signal="ready" from="." to="PlayerCharacter" method="_on_home_scene_ready"]

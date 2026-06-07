@@ -8,13 +8,17 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Room 102"
 config/description="Currenlty still in prototype, you can walk arround the abyss"
 config/version="0.0.1"
-run/main_scene="uid://cman72aryckor"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+run/main_scene="uid://dv0hu3wnsy7y"
+config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="uid://buwyj1rplo2wo"
 
@@ -71,6 +75,10 @@ window/size/viewport_height=360
 window/size/initial_position_type=4
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
+
+[global_group]
+
+player_character="group used for players"
 
 [input]
 
